@@ -1,9 +1,8 @@
 ---
-title: "Links"
+title: "Files to download"
 ---
 
-{{#each about.dates }}
-<p>{{ this }}</p>
+{{#each about.files }}
+  <a href="{{ this.url }}" download id="download">{{ this.name }}</p>
 {{/each}}
-
 
