@@ -1,0 +1,12 @@
+.header, .footer {
+  margin-top: 10rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+#stack-url {
+  cursor: pointer;
+  cursor: hand;
+}
