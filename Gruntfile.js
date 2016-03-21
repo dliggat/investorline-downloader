@@ -61,6 +61,17 @@ module.exports = function(grunt) {
           { expand: true, flatten: true, cwd: 'site/img/', src: '**', dest: '_output/img/', filter: 'isFile' }
         ]
       }
+    },
+    uglify: {
+      options: {
+        beautify: true,
+        quoteStyle: 1   // Single quotes
+      },
+      main: {
+        files: {
+          '_output/javascript/application.js': ['bower_components/jquery/dist/jquery.js', 'site/javascript/*.js']
+        }
+      }
     }
   });
 
@@ -71,6 +82,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jsonlint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('prepare_site', ['assemble', 'cssmin', 'copy']);
+  grunt.registerTask('prepare_site', ['assemble', 'cssmin', 'copy', 'uglify']);
 };
